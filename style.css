@@ -152,73 +152,99 @@
     transform: translateY(10px);
   }
 }
+ .offer {
+        width: 100%;
+         margin: 0 auto;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+      }
+      .offer-cards {
+        display: flex; /* Width = (number of total cards / cards visible at once) * 100% */
+        width: 500%;
+        align-items: center;
+        animation: moveSlideshow 55s linear infinite;
+      }
 
-/* Hero Section ended */
+      .card {
+        border: 3px solid red;
+        width: 100%;
+        margin: 0 15px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+        background-color: white;
+        border-radius: 25px;
+        padding: 20px 50px;
+      }
 
-The viewing container .slider-window {
-  width: 100%;
-  height: 400px;
-  overflow: hidden; /* Hides the banners waiting in line */
-  position: relative;
-}
+      @keyframes moveSlideshow {
+        100% {
+          transform: translateX(-66.6666%);
+        }
+      }
 
-/* The long train carrying all slides */
-.slider-wrapper {
-  display: flex;
-  width: 400%; /* 4 slides total (3 unique + 1 clone) */
-  height: 100%;
-  animation: slideAnimation 12s infinite ease-in-out;
-}
-
-/* Individual slides */
-.slide {
-  width: 100%; /* Takes up exactly 100% of the slider-window */
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: white;
-}
-
-/* Background colors for styling */
-.slide-1 {
-  background-color: #3498db;
-}
-.slide-2 {
-  background-color: #e74c3c;
-}
-.slide-3 {
-  background-color: #2ecc71;
-}
-
-/* The animation logic */
-@keyframes slideAnimation {
-  /* Slide 1 (Static) */
-  0%,
-  25% {
-    transform: translateX(0);
-  }
-
-  /* Transition to Slide 2 */
-  33%,
-  58% {
-    transform: translateX(-25%);
-  }
-
-  /* Transition to Slide 3 */
-  66%,
-  91% {
-    transform: translateX(-50%);
-  }
-
-  /* Transition to cloned Slide 1 */
-  100% {
-    transform: translateX(-75%);
-  }
-}
-
-/* Optional: Pause the slider when a user hovers over it */
-.slider-window:hover .slider-wrapper {
+.offer:hover .offer-cards {
   animation-play-state: paused;
 }
+
+.card-txt h4 {
+      font-size: 20px;
+      color: #df2614;
+}
+.card-txt h2{
+   color: #373B40;
+}
+.card-txt p{
+  color: #818080;
+}
+.card-txt .dollar{
+  font-weight: 700;
+  font-size: 28px;
+  color:#df2614;
+}
+.pp-container{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  width:30%;
+  height: 100%;
+  background-color:#E7E0D2;
+  border-radius: 100px;
+}
+.pp{
+  width:50%;
+  height:50%;
+  padding:5px;
+  border-radius: 100px;
+}
+.pp-1{
+   width: 68%;
+}
+.pp-2{
+     width:62%;
+}
+.pp-5{
+    width:68%;
+}
+.design{
+  position: absolute;
+  top:30px;
+  right: 280px;
+  width:5%;
+}
+.card:hover .design{
+      transform: translate3d(50px,-15px,0);
+      transition-duration: 1s;
+      
+}
+.card:hover .pp-container{
+   transition: 1s;
+   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+/* Hero Section ended */
+
+     
